@@ -1,0 +1,124 @@
+* {box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;;
+}
+h1,h4, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.container{
+    min-height: 600px;;
+}
+footer{
+    text-align: center;
+}
+.form1{
+    width:50%;
+    margin: auto;
+}
+
+.error{
+  color:red;
+}
+
+.modal-content{
+color:#fff;
+background: #32243c;
+}
+table{
+  margin: auto;
+}
+table>thead{
+  background-color:#2b5171;
+  color:#fff;
+}
+
+.form-appl{
+  padding:5px; 
+  margin-top:50px;
+}
+.title-class{
+font-size:30px; 
+text-align:center;
+}
+.err-msg{
+  color: red;
+}
+
+.avatar-upload {
+  position: relative;
+  max-width: 205px;
+}
+.avatar-upload .avatar-edit {
+  position: absolute;
+  right: 64px;
+  z-index: 1;
+  top: -5px;
+}
+.avatar-upload .avatar-edit input {
+  display: none;
+}
+.avatar-upload .avatar-edit input + label {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 0;
+  border-radius: 100%;
+  background: #f3ecec;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+.avatar-upload .avatar-edit input + label:hover {
+  background: #c3dbf4;
+  border-color: #918484;
+}
+.avatar-upload .avatar-edit input + label:after {
+  content: "\f040";
+  font-family: 'FontAwesome';
+  color: #757575;
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  right: 0;
+  text-align: center;
+  margin: auto;
+}
+.avatar-upload .avatar-preview {
+  width: 67%;
+  height: 147px;
+  position: relative;
+  border-radius: 3%;
+  border: 6px solid #F8F8F8;
+}
+.showPhoto{
+  width: 51%;
+  height: 54px;
+  margin:auto;
+}
+.showPhoto >div{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.avatar-upload .avatar-preview > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.btn-modal{
+  padding:10px; 
+  margin-left: -10px; 
+  width:120px;
+  }
+  
