@@ -6,12 +6,15 @@
                 <div class="title-class">
                     <h2>Laravel CRUD Upload Image</h2>
                 </div>
-                <h3>{{$title}}</h3>
-                <form class="form1" method="post" action="@if(isset($edit->id)){{route('user.update', ['id' => $edit->id])}}@else{{route('user.store')}}@endif" enctype="multipart/form-data">
+                <h3>{{ $title }}</h3>
+                <form class="form1" method="post"
+                    action="@if (isset($edit->id)) {{ route('user.update', ['id' => $edit->id]) }}@else{{ route('user.store') }} @endif"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="form-group col-md-12 mb-3">
                         <label for="">Your Name</label>
-                        <input class="form-control" type="text" name="name" placeholder="Enter Your Name" value="@if(isset($edit->id)){{$edit->name}}@else {{old('name')}}@endif">
+                        <input class="form-control" type="text" name="name" placeholder="Enter Your Name"
+                            value="@if (isset($edit->id)) {{ $edit->name }}@else {{ old('name') }} @endif">
                         @error('name')
                             <div class="error">{{ $message }}</div>
                         @enderror
@@ -19,8 +22,8 @@
 
                     <div class="form-group col-md-12 mb-3">
                         <label for="">Your Email</label>
-                        <input class="form-control" type="text" name="email" 
-                            placeholder="Enter Your Email" value="@if(isset($edit->id)){{$edit->email}}@else {{old('email')}}@endif">
+                        <input class="form-control" type="text" name="email" placeholder="Enter Your Email"
+                            value="@if (isset($edit->id)) {{ $edit->email }}@else {{ old('email') }} @endif">
                         @error('email')
                             <div class="error">{{ $message }}</div>
                         @enderror
@@ -30,13 +33,13 @@
                         <div class="avatar-upload">
                             <div class="avatar-edit">
                                 <input type='file' id="imageUpload" name="photo" accept=".png, .jpg, .jpeg"
-                                   onchange="previewImage(this)" />
+                                    onchange="previewImage(this)" />
                                 <label for="imageUpload"></label>
                             </div>
 
                             <div class="avatar-preview">
                                 <div id="imagePreview"
-                                    style="@if (isset($edit->id) && $edit->photo !='') background-image:url('{{ url('/') }}/uploads/{{ $edit->photo }}')@else background-image: url('{{ url('/img/avatar.png') }}') @endif">
+                                    style="@if (isset($edit->id) && $edit->photo != '') background-image:url('{{ url('/') }}/uploads/{{ $edit->photo }}')@else background-image: url('{{ url('/img/avatar.png') }}') @endif">
                                 </div>
                             </div>
                         </div>
@@ -52,18 +55,18 @@
         </div>
     </div>
 @endsection
-@push("js")
-<script type="text/javascript">
-    function previewImage(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $("#imagePreview").css('background-image', 'url(' + e.target.result + ')');
-                $("#imagePreview").hide();
-                $("#imagePreview").fadeIn(700);
+@push('js')
+    <script type="text/javascript">
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("#imagePreview").css('background-image', 'url(' + e.target.result + ')');
+                    $("#imagePreview").hide();
+                    $("#imagePreview").fadeIn(700);
+                }
+                reader.readAsDataURL(input.files[0]);
             }
-            reader.readAsDataURL(input.files[0]);
         }
-    }
-</script>
+    </script>
 @endpush
