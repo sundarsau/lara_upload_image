@@ -6,7 +6,7 @@ Laravel application to do all CRUD operations along with image upload and previe
 
 1) Download the repository from https://github.com/sundarsau/lara_upload_image
 2) Extract it into a folder
-3) Create a Database. For example, lara_demo database.
+3) Create a Database in MySQL
 4) copy .env.example to .env and update database name, username and password. For example, I used the database lara_demo and updated database details as below:
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
