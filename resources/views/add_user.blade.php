@@ -6,7 +6,6 @@
                 <div class="title-class">
                     <h2>Laravel CRUD Upload Image</h2>
                 </div>
-                {{-- <div class="error" id="message"></div> --}}
                 <h3>{{$title}}</h3>
                 <form class="form1" method="post" action="@if(isset($edit->id)){{route('user.update', ['id' => $edit->id])}}@else{{route('user.store')}}@endif" enctype="multipart/form-data">
                     @csrf
@@ -53,16 +52,18 @@
         </div>
     </div>
 @endsection
+@push("js")
 <script type="text/javascript">
     function previewImage(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
                 $("#imagePreview").css('background-image', 'url(' + e.target.result + ')');
-                $("imagePreview").hide();
-                $("imagePreview").fadeIn(700);
+                $("#imagePreview").hide();
+                $("#imagePreview").fadeIn(700);
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 </script>
+@endpush
