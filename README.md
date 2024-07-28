@@ -1,6 +1,6 @@
 # Laravel CRUD with Image upload
  
-Laravel application to do all CRUD operations along with image upload and preview. It uses Laravel 9 and MySQL. You can list existing users, add new users, update user details, update photo and delete user.
+Laravel application to do all CRUD operations along with image upload and preview. You can list existing users, add new users, update user details, update photo and delete user. Tutorial - https://codehow2.com/laravel/how-to-implement-crud-in-laravel-with-preview-and-upload-image
 
 # How To Use
 
